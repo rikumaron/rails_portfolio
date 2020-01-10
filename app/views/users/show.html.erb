@@ -1,0 +1,35 @@
+<!--<h1>Users#show</h1>-->
+<!--<p>Find me in app/views/users/show.html.erb</p>-->
+
+<div class="user container">
+  <!-- プロフィール部分 -->
+  <%= render partial: 'users/profile' %>
+  
+  <!-- 投稿画像部分 -->
+  <!--<div class="posts">-->
+  <!--  <ul>-->
+  <!--    <li>-->
+  <!--      <div style="background: url('https://dummyimage.com/600/6b6b6b/fff'); background-repeat: no-repeat; background-position: 50%;"></div>-->
+  <!--    </li>-->
+  <!--    <li>-->
+  <!--      <div style="background: url('https://dummyimage.com/600/6b6b6b/fff'); background-repeat: no-repeat; background-position: 50%;"></div>-->
+  <!--    </li>-->
+  <!--    <li>-->
+  <!--      <div style="background: url('https://dummyimage.com/600/6b6b6b/fff'); background-repeat: no-repeat; background-position: 50%;"></div>-->
+  <!--    </li>-->
+  <!--  </ul>-->
+  <!--</div>-->
+  
+  <!-- 投稿画像部分 -->
+  <div class="posts">
+    <ul>
+      <% @posts.each do |post| %>
+        <% post.post_images.each do |post_image| %>
+        <li>
+          <div style="background: url('<%= "/images/#{post_image.name}" %>'); background-repeat: no-repeat; background-position: 50%;"></div>
+        </li>
+        <% end %>
+      <% end %>
+      </ul>
+  </div>
+</div>
